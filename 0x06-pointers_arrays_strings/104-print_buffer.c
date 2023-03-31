@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
 * print_buffer - prints buffer
 * @b: buffer
@@ -28,7 +27,7 @@ for (i = 0; i < 10; i++)
 if (i < j)
 printf("%02x", *(b + o + i));
 else
-printf(" ");
+printf("  ");
 if (i % 2)
 {
 printf(" ");
@@ -37,6 +36,7 @@ printf(" ");
 for (i = 0; i < j; i++)
 {
 int c = *(b + o + i);
+
 if (c < 32 || c > 132)
 {
 c = '.';
