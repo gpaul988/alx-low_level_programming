@@ -3,29 +3,31 @@
  * find_listint_loop - finds loop in linked list
  * @head: linked list to search
  *
- * Return: addresses  the node where loop starts, or NULL
+ * Return: Addresses the node where loop starts, or NULL.
+ * otherwis - The node address is where the loop starts.
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-listint_t *slow = head;
-listint_t *fast = head;
+	listint_t *tortoise, *hare;
 
-if (!head)
-return (NULL);
-while (slow && fast && fast->next)
-{
-fast = fast->next->next;
-slow = slow->next;
-if (fast == slow)
-{
-slow = head;
-while (slow != fast)
-{
-slow = slow->next;
-fast = fast->next;
-}
-return (fast);
-}
-}
-return (NULL);
+	if (head == NULL || head->next == NULL)
+		return (NULL);
+	tortoise = head->next;
+	hare = (head->next)->next;
+	while (hare)
+	{
+		if (tortoise == hare)
+		{
+			tortoise = head;
+			while (tortoise != hare)
+			{
+				tortoise = tortoise->next;
+				hare = hare->next;
+			}
+			return (tortoise);
+		}
+		tortoise = tortoise->next;
+		hare = (hare->next)->next;
+	}
+	return (NULL);
 }
