@@ -1,17 +1,19 @@
 #include "lists.h"
-/**
- * looped-listint_count - counts number of uniquenodes in a looped
- * listint_t linked list
- * @head: Pointer to head of listint_t check
- *
- * Return: If list not looped - 0
- * otherwise - numberof unique nodes in list
- */
-size_t free_listint_safe(listint_t **h);
+
 size_t looped_listint_count(listint_t *head);
+size_t free_listint_safe(listint_t **h);
+
+/**
+ * looped_listint_count - Counts number of unique nodes in looped
+ * listint_t linked list.
+ * @head: Head of listint_t to check pointer.
+ *
+ * Return: If list not looped - 0.
+ * Otherwise - number of unique nodes in list.
+ */
 size_t looped_listint_count(listint_t *head)
 {
-listint_t *tortoise, *hare;
+	listint_t *tortoise, *hare;
 	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
@@ -35,7 +37,6 @@ listint_t *tortoise, *hare;
 				nodes++;
 				tortoise = tortoise->next;
 			}
-
 			return (nodes);
 		}
 		tortoise = tortoise->next;
@@ -46,9 +47,10 @@ listint_t *tortoise, *hare;
 
 /**
  * free_listint_safe - Frees listint_t list safely
- * @h: Head of listint_t list address pointer
+ * @h: Head of listint_t list addresses pointer.
  *
- * Return: Size of list thats was freed.
+ * Return: Size of list which was freed.
+ *
  */
 size_t free_listint_safe(listint_t **h)
 {
