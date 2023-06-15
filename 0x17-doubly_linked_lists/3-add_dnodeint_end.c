@@ -1,16 +1,17 @@
 #include "lists.h"
 
 /**
-* add_dnodeint_end – Includes latest node at the close of list.
-* @head: Directs to the beginning of list.
-* @n: Integer for the current node to hold.
+* add_dnodeint_end - Includes new node at end
+* of dlistint_t list
 *
-* Return: If not working - NULL.
-*         O/W - Location of the latest node.
+* @head: Beginning of the list
+* @n: Elements worth
+* Return: Location of new element
 */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-dlistint_t *new, *last;
+dlistint_t *h;
+dlistint_t *new;
 
 new = malloc(sizeof(dlistint_t));
 if (new == NULL)
@@ -19,18 +20,20 @@ return (NULL);
 new->n = n;
 new->next = NULL;
 
-if (*head == NULL)
+h = *head;
+
+if (h != NULL)
 {
-new->prev = NULL;
+while (h->next != NULL)
+h = h->next;
+h->next = new;
+}
+else
+{
 *head = new;
-return (new);
 }
 
-last = *head;
-while (last->next != NULL)
-last = last->next;
-last->next = new;
-new->prev = last;
+new->prev = h;
 
 return (new);
 }
