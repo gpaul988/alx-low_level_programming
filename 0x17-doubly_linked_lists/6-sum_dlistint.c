@@ -1,19 +1,28 @@
 #include "lists.h"
 
 /**
-* sum_dlistint – Totals all data of a dlistint_t list.
-* @head: Beginning of dlistint_t list.
+* sum_dlistint - Retrieves total of all data (n)
+* of doubly connect list
 *
-* Return: Total of all the data.
+* @head: Beginning of list
+* Return: Total of data
 */
 int sum_dlistint(dlistint_t *head)
 {
-int sum = 0;
+int sum;
 
-while (head)
+sum = 0;
+
+if (head != NULL)
+{
+while (head->prev != NULL)
+head = head->prev;
+
+while (head != NULL)
 {
 sum += head->n;
 head = head->next;
+}
 }
 
 return (sum);
