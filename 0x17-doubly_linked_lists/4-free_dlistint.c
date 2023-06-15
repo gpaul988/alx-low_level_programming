@@ -1,17 +1,23 @@
 #include "lists.h"
 
 /**
- * free_dlistint – Allows connected dlistint_t list.
- * @head: Begining of the dlistint_t list.
- */
+* free_dlistint - Permits a dlistint_t list
+*
+* @head: Beginning of the list
+* Return: NIl
+*/
+
 void free_dlistint(dlistint_t *head)
 {
-	dlistint_t *tmp;
+dlistint_t *tmp;
 
-	while (head)
-	{
-		tmp = head->next;
-		free(head);
-		head = tmp;
-	}
+if (head != NULL)
+while (head->prev != NULL)
+head = head->prev;
+
+while ((tmp = head) != NULL)
+{
+head = head->next;
+free(tmp);
+}
 }
