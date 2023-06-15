@@ -1,21 +1,24 @@
 #include "lists.h"
 
 /**
-* get_dnodeint_at_index – Pinpoint a node in a dlistint_t list.
-* @head: Beginning of the dlistint_t list.
-* @index: Node to detect.
+* get_dnodeint_at_index - Returns nth node of dlistint_t connected list.
+* @head: Directs to the beginning node of the list.
+* @index: Index of Selected node, beginning from 0.
 *
-* Return: Node does not exist - NULL.
-*         O/W - Dectets the located node.
+* Return: Directs to nth node, or NULL if node doesn’t exist.
 */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-for (; index != 0; index--)
+dlistint_t *current = head;
+unsigned int count = 0;
+
+while (current != NULL)
 {
-if (head == NULL)
-return (NULL);
-head = head->next;
+if (count == index)
+return (current);
+current = current->next;
+count++;
 }
 
-return (head);
+return (NULL);
 }
