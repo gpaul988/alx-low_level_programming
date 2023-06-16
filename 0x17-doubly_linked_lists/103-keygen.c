@@ -3,9 +3,9 @@
 #include <string.h>
 
 /**
-* main – Create and pull passwords for the crackme5 executable.
-* @argc: Number of reasoning given to the project.
-* @argv: Array of directories to the Reasoning.
+* main – Develop and pull passwords for crackme5 executable.
+* @argc: Number of arguments given to project.
+* @argv: Array of redirects to arguments.
 *
 * Return: Always 0.
 */
