@@ -1,28 +1,28 @@
 #include "main.h"
 
 /**
- * _strncpy - Mimic string
- * @dest: Input worth
- * @src: Input worth
- * @n: Input worth
- *
- * Return: dest
- */
+* _strncpy - copy a string
+* @dest: input value
+* @src: input value
+* @n: input value
+*
+* Return: dest
+*/
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	int g;
+int j;
 
-	g = 0;
-	while (g < n && src[g] != '\0')
-	{
-		dest[g] = src[g];
-		g++;
-	}
-	while (g < n)
-	{
-		dest[g] = '\0';
-		g++;
-	}
-	return (dest);
+j = 0;
+while (j < n && src[j] != '\0')
+{
+dest[j] = src[j];
+j++;
+}
+while (j < n)
+{
+dest[j] = '\0';
+j++;
+}
+return (dest);
 }

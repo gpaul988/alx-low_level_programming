@@ -1,24 +1,23 @@
 #include "main.h"
-
 /**
- * _strpbrk – Task that explores a string for any of a set of bytes
- * @s: Origin string
- * @accept: String to be explored
- *
+ * _strpbrk - Entry point
+ * @s: input
+ * @accept: input
  * Return: Always 0 (Success)
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int j;
+		int k;
 
-	while (*s)
-	{
-		for (j = 0; accept[j]; j++)
+		while (*s)
 		{
-			if (*s == accept[j])
-				return (s);
-		}
+			for (k = 0; accept[k]; k++)
+			{
+			if (*s == accept[k])
+			return (s);
+			}
 		s++;
-	}
+		}
+
 	return ('\0');
 }

@@ -1,19 +1,16 @@
 #include "main.h"
 
+
 /**
- * _abs – compiles correct value of integer
- * @k: Int to be compiled
- *
- * Return: Correct value of int
+ * _abs - computes the absolute value of an integer
+ * @n: the int to check
+ * Return: the absolute value of int
  */
-int _abs(int k)
+int _abs(int n)
 {
-	if (k >= 0)
-	{
-		return (k);
-	}
-	else
-	{
-		return (-k);
-	}
+if (n >= 0)
+{
+return (n);
+}
+return (-n);
 }
