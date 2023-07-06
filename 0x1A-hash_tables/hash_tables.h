@@ -4,7 +4,6 @@
 
 #include <string.h>
 #include "data.h"
-#include "100-init.h"
 #include <stdio.h>
 #include <stdlib.h>
 
