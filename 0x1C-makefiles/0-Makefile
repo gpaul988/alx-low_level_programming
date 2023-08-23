@@ -1,0 +1,3 @@
+# Graham S. Paul (0-Makefile)
+all: m.h school.c main.c
+	gcc main.c school.c -o school

@@ -1,0 +1,8 @@
+# Graham S. PAul (2-Makefile)
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+
+all: m.h $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
